@@ -1,0 +1,40 @@
+/* Copyright (C) Cross The Road Electronics 2024 */
+#pragma once
+
+#include "ctre/phoenix/led/BaseTwoSizeAnimation.h"
+
+namespace ctre {namespace phoenix {namespace led {
+
+/**
+ * Animation that fades into and out of a specified color
+ *
+ * @deprecated This device's Phoenix 5 API is deprecated for removal in the
+ * 2027 season. Users should update to Phoenix 6 firmware and migrate to the
+ * Phoenix 6 API. A migration guide is available at
+ * https://v6.docs.ctr-electronics.com/en/stable/docs/migration/migration-guide/index.html.
+ *
+ * If the Phoenix 5 API must be used for this device, the device must have 22.X
+ * firmware. This firmware is available in Tuner X after selecting Phoenix 5 in
+ * the firmware year dropdown.
+ */
+class [[deprecated("This device's Phoenix 5 API is deprecated for removal in the 2027 season."
+                "Users should update to Phoenix 6 firmware and migrate to the Phoenix 6 API."
+                "A migration guide is available at https://v6.docs.ctr-electronics.com/en/stable/docs/migration/migration-guide/index.html")]]
+SingleFadeAnimation : public BaseTwoSizeAnimation {
+public:
+    /**
+     * Constructor for a SingleFadeAnimation
+     * @param r How much red should the color have [0, 255]
+     * @param g How much green should the color have [0, 255]
+     * @param b How much blue should the color have [0, 255]
+     * @param w How much white should the color have [0, 255]
+     * @param speed How fast should the color travel the strip [0, 1]
+     * @param numLed How many LEDs the CANdle controls
+     * @param ledOffset Where to start the animation
+     */
+    SingleFadeAnimation(int r, int g, int b, int w = 0, double speed = 1, int numLed = -1, int ledOffset = 0);
+};
+
+} // namespace led
+} // namespace phoenix
+} // namespace ctre
