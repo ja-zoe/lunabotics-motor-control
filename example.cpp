@@ -36,6 +36,7 @@ void drive(double fwd, double turn)
 	double rght = fwd + turn; /* positive turn means turn robot LEFT */
 
 	talLeft.Set(ControlMode::PercentOutput, left);
+  vicLeft.Set(ControlMode::PercentOutput, left);
 	// talRght.Set(ControlMode::PercentOutput, rght);
 }
 /** simple wrapper for code cleanup */
