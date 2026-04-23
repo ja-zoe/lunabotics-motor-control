@@ -57,13 +57,6 @@ int main() {
 		   neutral drive until gamepad (re)connected. */
 		ctre::phoenix::unmanaged::Unmanaged::FeedEnable(100);
     drive(0.1, 0);
-    sleepApp(20);
-		drive(0.2, 0);
-    sleepApp(20);
-		drive(0.3, 0);
-    sleepApp(20);
-		drive(0, 0);
-    sleepApp(20);
 	}
 
 	SDL_Quit();
