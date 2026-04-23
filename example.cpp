@@ -54,14 +54,15 @@ int main() {
 	while (true) {
 		/* we are looking for gamepad (first time or after disconnect),
 		   neutral drive until gamepad (re)connected. */
-		drive(0.1, 0);
-    sleepApp(2000);
+		ctre::phoenix::unmanaged::Unmanaged::FeedEnable(100);
+    drive(0.1, 0);
+    sleepApp(20);
 		drive(0.2, 0);
-    sleepApp(2000);
+    sleepApp(20);
 		drive(0.3, 0);
-    sleepApp(2000);
+    sleepApp(20);
 		drive(0, 0);
-    sleepApp(2000);
+    sleepApp(20);
 	}
 
 	SDL_Quit();
